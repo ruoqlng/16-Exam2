@@ -2,9 +2,8 @@
 Exam 2, problem 1.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.  April 2018.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
-
+         their colleagues and ruoqing.  April 2018.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 def main():
     """ Calls the   TEST   functions in this module. """
@@ -12,7 +11,7 @@ def main():
 
 
 ###############################################################################
-# TODO: 2.  READ the code of the  Rect  class below.
+# DONE: 2.  READ the code of the  Rect  class below.
 #
 #   Once you are confident that you understand the  Rect  class and its code,
 #   change the TO-DO for this problem to DONE.
@@ -29,12 +28,32 @@ class Rect(object):
 def run_test_problem1():
     """ Tests the   problem1   function. """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement at least 2 tests of the  problem1  function.
+    # DONE: 3. Implement at least 2 tests of the  problem1  function.
     # -------------------------------------------------------------------------
     print()
     print('--------------------------------------------------')
     print('Testing the   problem1   function:')
     print('--------------------------------------------------')
+
+    # Test 1:
+    print('Test 1:')
+    print('  Testing the return value:')
+    rectangles = [Rect(5, 4), Rect(3, 5), Rect(7, 9)]
+    expected = 20 + 15 + 63
+    actual = problem1(rectangles)
+    print("    Expected:", expected)
+    print("    Actual:  ", actual)
+    print()
+
+    # Test 2:
+    print('Test 2:')
+    print('  Testing the return value:')
+    rectangles = [Rect(8, 4), Rect(6, 5), Rect(7, 4)]
+    expected = 32 + 30 + 28
+    actual = problem1(rectangles)
+    print("    Expected:", expected)
+    print("    Actual:  ", actual)
+    print()
 
 
 def problem1(rectangles):
@@ -52,8 +71,13 @@ def problem1(rectangles):
     :param rectangles: [Rect]
     :return: int
     """
+    area = 0
+    for k in range(len(rectangles)):
+        area = area + rectangles[k].w * rectangles[k].h
+    return area
+
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     # -------------------------------------------------------------------------
 
 
